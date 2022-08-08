@@ -1,46 +1,64 @@
-# PROBLEM ONE: TRAINS
+# PRUEBA TÉCNICA PARA FISA GROUP
 
-_PROBLEM ONE: TRAINS - Prueba técnica Java_
+> Prueba técnica para postulación a vacante en FISA GROUP.
+> Consideraciones:
 
-### Desarrollado con Spring boot, Java  17 y Maven
-
-## Diseño
-
-Se considera el texto del ejercicio (ver final) para definir el diseño de la siguiente manera:
-
-**Conference:** Grupo de días con una calendarización de eventos y con sus horas de inicio y duración en minutos.
-
-**Track:** Definición del día de una conferencia, tienen varias sesiones (mañana y tarde).
-
-**Session:** Definición de secciones de un día de conferencia, se definen para la mañana y la tarde, puede tener varios eventos de acuerdo a sus horarios de inicio y fin.
-
-**TalkEvent:** Definición de un evento, con una hora de inicio del evento y los atributos de una Chatla (Talk).
-
-**Talk:** Definicion de una unidad de charla, tiene un título y una duración de la misma en minutos.
+* Se seleccionó el primer ejercicio TRAINS
+* Se creó un programa de consola usando el framework Spring Boot.
+* El empaquetado final es JAR
+* Se usaron algunos patrones de diseño
 
 
-## Ejecución
+## Technologies Used
+- Spring Boot.
+- JUNIT para test.
+- Variación del método DIJKSTRA para el cálculo de camino más corto.  
 
-_Pre requisito: Java 17_
+## Estructura
+Se separaron en capas según la siguiente estructura:
+- Exception
+  - Se creó una clase básica para controlar las excepciones. 
+- Model
+  - Contiene los modelos Route, SubRoute y Town.
+  - SubRoute es una clase interna que ayuda en el cálculo de los recorridos. 
+- Service
+  - Contiene los servicios que realizan los cálculos y utilidades para el programa.
+- Question
+  - Contiene la clase abstracta Question que abstrae métodos para calcular y extiende el método para imprimir el resultado.
+  - Por cada pregunta del ejercicio se creó una clase que extiende de la clase abstracta Question, esto facilita en la reutilización de código. 
+- Test
+  - Contiene las pruebas de cada Question dentro de QuestionTest.java
 
-Descargar el código fuente con cualquier IDE
 
-Descargar código
+
+## Requisitos
+- Java 17
+- Maven 3
+
+## Instalación
+- Descargar el código fuente o clonarlo desde Github 
 ```
-git clone https://github.com/edwinfmn/ConferenceTrack
+git clone https://github.com/danygancino/TechnicalTest.git
 ```
+- Descomprimir
 
-Compilar
+
+## Compilar y empaquetar
+
 ```
-cd ConferenceTrack/
+cd technicalTest/
 mvn clean
 mvn package/
 ```
 
-Ejecutar
+##Ejecutar
 ```
-java -cp target/ConferenceTrack-1.0-SNAPSHOT.jar Main
+java -jar target/technicalTest-0.0.1-SNAPSHOT.jar
 ```
+
+## Screenshots
+![Example screenshot](./screen.png)
+
 
 ## Descripción del ejercicio resuelto
 
@@ -91,4 +109,9 @@ Output #10: 7
 ```
 
 ---
-Por [Dany Gancino](https://github.com/danygancino/) - Agosto 2022
+We should get <a href="mailto:danygancino@gmail.com">user@example.com</a> instead?
+
+## Contact
+- Por correo <a href="mailto:danygancino@gmail.com">user@example.com</a> 
+
+- Por Github [Dany Gancino](https://github.com/danygancino/) Agosto 2022
